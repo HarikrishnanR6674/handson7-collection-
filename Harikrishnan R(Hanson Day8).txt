@@ -30,7 +30,6 @@ class UserMainCode{
                           int l=(Integer)me.getKey();
 
                           if(l%2==1) {
-
                               t=t+(Double)me.getValue();
 
                               count++;}
