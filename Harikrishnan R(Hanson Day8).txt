@@ -1,0 +1,340 @@
+1)
+package com.handson7;
+
+import java.util.HashMap;
+
+import java.util.Iterator;
+
+import java.util.Map;
+
+import java.util.Scanner;
+
+import java.util.Set;
+
+class UserMainCode{
+
+             static double calculate(HashMap h,int size)
+
+{            
+
+                    double count=0, t=0;
+
+                    Set <Integer>s=h.entrySet(); 
+
+                    Iterator itr=s.iterator();
+
+                    while(itr.hasNext()) {
+
+                          Map.Entry me=(Map.Entry)itr.next();
+
+                          int l=(Integer)me.getKey();
+
+                          if(l%2==1) {
+
+                              t=t+(Double)me.getValue();
+
+                              count++;}
+
+                         
+
+}
+
+                    return t/count;
+
+            
+
+}}
+
+public class ClassMain {
+
+       public static void main(String[] args) {
+
+             HashMap<Integer,Double> ht=new HashMap<>();
+
+       Scanner s=new Scanner(System.in) ;
+
+      System.out.println("no of input");
+
+      int i=s.nextInt();
+
+      UserMainCode u=new UserMainCode();
+
+      for(int j=1;j<=i;j++) {
+
+         System.out.println(j);
+
+         ht.put(j,s.nextDouble());
+
+         
+
+      }
+
+     
+
+    double k= u.calculate(ht,i);
+
+    k=Math.round(k*100.0)/100.0;
+
+    System.out.println(k);
+ 
+
+       }
+
+ 
+
+}
+
+ 
+
+ 
+
+ 
+
+2)
+
+ 
+
+ 
+
+package com.handson7;
+
+import java.util.HashMap;
+
+import java.util.Iterator;
+
+import java.util.Map;
+
+import java.util.Scanner;
+
+import java.util.Set;
+
+class  UserMainCode2{
+
+       static int afterdelete(HashMap ht) {
+
+             int k,count=ht.size();
+
+             Set s=ht.entrySet(); 
+
+             Iterator itr=s.iterator();
+
+             while(itr.hasNext()) {
+
+                    Map.Entry me=(Map.Entry)itr.next();
+
+                    int l=(Integer)me.getKey();
+
+                    if(l%3==0) {
+
+                          count--;
+
+                    }
+
+             }
+
+             return count;
+
+}}
+
+ 
+
+public class ClassMain2 {
+
+ 
+
+       public static void main(String[] args) {
+
+             HashMap<Integer,String> ht=new HashMap<>();
+
+             Scanner s=new Scanner(System.in) ;
+
+             System.out.println("no of input");
+
+             int i=s.nextInt();
+
+             UserMainCode2 u=new UserMainCode2();
+
+             for(int j=0;j<i;j++) {
+
+                ht.put(s.nextInt(),s.next());
+
+                
+
+}
+
+             System.out.println(u.afterdelete(ht));
+
+ 
+
+}
+
+}
+
+ 
+
+3)
+
+ 
+
+package com.handson7;
+
+import java.util.Scanner;
+
+import java.util.TreeMap;
+
+ 
+
+class UserMainCode3{
+
+       static String getmax(TreeMap h) {
+
+String j=(String) h.get(h.lastKey());
+
+            
+
+             return j;
+
+       }
+
+}
+
+ 
+
+ 
+
+public class ClassMain3 {
+
+ 
+
+       public static void main(String[] args) {
+
+ 
+
+             TreeMap<Integer,String> ht=new TreeMap<>();
+
+             Scanner s=new Scanner(System.in) ;
+
+             System.out.println("no of input");
+
+             int i=s.nextInt();
+
+             UserMainCode3 u=new UserMainCode3();
+
+             for(int j=0;j<i;j++) {
+
+                ht.put(s.nextInt(),s.next());
+
+             }
+
+            
+
+             System.out.println(u.getmax(ht));
+
+            
+
+             }
+
+ 
+
+       }
+
+ 
+
+  
+
+4)
+
+ 
+
+package com.handson7; 
+
+import java.util.ArrayList;
+
+import java.util.List;
+
+import java.util.Map.Entry;
+
+import java.util.Scanner;
+
+import java.util.TreeMap;
+
+class UserMainCode4{
+
+      
+
+       static List<String> designation(TreeMap<String,String> t,String des) {
+
+             List<String> lst=new ArrayList<>();
+
+             for(Entry<String, String> e:t.entrySet())
+
+             {if(e.getValue().equals(des)) {
+
+                    lst.add(e.getKey());
+
+             }
+
+                   
+
+             }
+
+             return lst;
+
+       }
+
+}
+
+ 
+
+public class ClassMain4 {
+
+ 
+
+       public static void main(String[] args) {
+ 
+
+       TreeMap<String,String> ht=new TreeMap<>();
+
+    Scanner s=new Scanner(System.in)   ;
+
+    System.out.println("no of input");
+
+    int i=s.nextInt();
+
+    UserMainCode4 u=new UserMainCode4();
+
+    for(int j=0;j<i;j++) {
+
+         ht.put(s.next(),s.next());
+
+    }
+
+   
+
+    System.out.println("enter designation to search");
+
+    String d=s.next();
+
+   
+
+    List<String> lst1=u.designation(ht,d);
+
+   
+
+    for(String s1:lst1)
+
+       System.out.println(s1);
+
+ 
+
+}}
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
